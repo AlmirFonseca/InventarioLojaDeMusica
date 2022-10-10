@@ -55,15 +55,3 @@ def remover(inventario, indice):
     
     return inventario
 
-colunas = ["Item", "Quantidade"]
-linhas = [["Saxofone", 2], ["Flauta", 7], ["Violão", 5], ["Clarinete", 8], ["Bumbo", 3], ["Contrabaixo", 2], ["Guitarra", 2]]
-
-inventario = pd.DataFrame(data=linhas, columns=colunas)
-
-# print(listar(inventario))
-
-# print(adicionar(inventario,"a", 20))
-# print(inventario)
-
-# print(remover(inventario, 10))
-
