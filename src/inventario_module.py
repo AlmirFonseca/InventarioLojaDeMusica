@@ -10,9 +10,10 @@ def listar(inventario):
     :rtype: pd.DataFrame
     
     '''
+    
     return inventario
 
-def adicionar(inventario,nome, quantidade):
+def adicionar(inventario, nome, quantidade):
     ''' Função de adição de itens no inventário
     
     Dado um inventário e dados de um novo produto (nome e quantidade), insere o novo produto no inventário da loja de música e retorna o inventário atualizado
@@ -26,6 +27,9 @@ def adicionar(inventario,nome, quantidade):
     :rtype: pandas.core.frame.DataFrame
     
     '''
+    
+    inventario.iloc[-1] = [nome, quantidade]
+    
     return inventario
     
 def remover(inventario, indice):
@@ -42,29 +46,24 @@ def remover(inventario, indice):
     :rtype:pandas.core.frame.DataFrame
     
     '''
-    # dicionario.pop(item)
-    return dicionario
 
-def buscar(inventario,):
-    ''' função de listar 
-
-    :param inventario: Dicionário que representa o inventário
-    :type dicionario: dict
-    :param inventario: Dicionário que representa o inventário
-    :type dicionario: dict
-    :rtype:
+    try:
+        inventario = inventario.drop(index = indice)
+    except:
+        print(f"O índice indicado ({indice}) não corresponde a nenhum item do inventário da nossa loja de música")
+    inventario.reset_index(drop=True, inplace=True)
     
-    '''
-    busca = dicionario[item]
-    return busca
-
+    return inventario
 
 colunas = ["Item", "Quantidade"]
 linhas = [["Saxofone", 2], ["Flauta", 7], ["Violão", 5], ["Clarinete", 8], ["Bumbo", 3], ["Contrabaixo", 2], ["Guitarra", 2]]
 
 inventario = pd.DataFrame(data=linhas, columns=colunas)
-print(inventario)
 
-# print(adicionar(dic,"a", 20))
-# print(remover(dic,"hello"))
+# print(listar(inventario))
+
+# print(adicionar(inventario,"a", 20))
+# print(inventario)
+
+# print(remover(inventario, 10))
 
