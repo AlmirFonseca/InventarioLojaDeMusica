@@ -28,32 +28,30 @@ def adicionar(inventario,nome, quantidade):
     '''
     return inventario
     
-def remover(dicionario, indice):
+def remover(inventario, indice):
     ''' Função de remover itens do inventário
     
     Dado um inventário e o índice de um item, a função remove o item do inventário.
     Caso o índice indicado não corresponda a nenhum item, uma mensagem de erro é impressa.
     Por fim, a função retorna o inventário atualizado
 
-    :param dicionario: Dicionário que representa o inventário
-    :type dicionario: dict
-    :param b: segundo numero
-    
-    :rtype:
+    :param inventario: Dataframe do inventário
+    :type inventario: pandas.core.frame.DataFrame
+    :param indice: Índice do produto a ser removido
+    :type indice: int
+    :rtype:pandas.core.frame.DataFrame
     
     '''
     # dicionario.pop(item)
     return dicionario
 
-def buscar(dicionario,item):
+def buscar(inventario,):
     ''' função de listar 
 
-    :param dicionario: Dicionário que representa o inventário
+    :param inventario: Dicionário que representa o inventário
     :type dicionario: dict
-    :param dicionario: Dicionário que representa o inventário
+    :param inventario: Dicionário que representa o inventário
     :type dicionario: dict
-
-    
     :rtype:
     
     '''
