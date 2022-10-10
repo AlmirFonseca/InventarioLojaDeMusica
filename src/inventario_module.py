@@ -1,8 +1,4 @@
-#inventario
-
 import pandas as pd
-
-dic = {"hello":20}
 
 def listar(inventario):
     ''' Função de listagem de itens do inventário
@@ -32,34 +28,45 @@ def adicionar(inventario,nome, quantidade):
     '''
     return inventario
     
-def remover(inventario,indice):
+def remover(dicionario, indice):
     ''' Função de remover itens do inventário
     
     Dado um inventário e o índice de um item, a função remove o item do inventário.
     Caso o índice indicado não corresponda a nenhum item, uma mensagem de erro é impressa.
     Por fim, a função retorna o inventário atualizado
 
-    :param inventario: Dataframe do inventário
-    :type inventario: pandas.core.frame.DataFrame
-    :param indice: Índice do produto a ser removido
-    :type indice: int
-    :rtype: pandas.core.frame.DataFrame
+    :param dicionario: Dicionário que representa o inventário
+    :type dicionario: dict
+    :param b: segundo numero
+    
+    :rtype:
     
     '''
-    return inventario
+    # dicionario.pop(item)
+    return dicionario
 
-def buscar(inventario,indice):
-    ''' Função que busca item do inventário 
+def buscar(dicionario,item):
+    ''' função de listar 
 
-    :param inventario: Dataframe do inventário
-    :type inventario: pandas.core.frame.DataFrame
-    :param indice: Índice do produto buscado
-    :type indice: int
-    :rtype: pandas.core.series.Series
+    :param dicionario: Dicionário que representa o inventário
+    :type dicionario: dict
+    :param dicionario: Dicionário que representa o inventário
+    :type dicionario: dict
+
+    
+    :rtype:
     
     '''
-    return linha
+    busca = dicionario[item]
+    return busca
 
-print(adicionar(dic,"a", 20))
-print(remover(dic,"hello"))
+
+colunas = ["Item", "Quantidade"]
+linhas = [["Saxofone", 2], ["Flauta", 7], ["Violão", 5], ["Clarinete", 8], ["Bumbo", 3], ["Contrabaixo", 2], ["Guitarra", 2]]
+
+inventario = pd.DataFrame(data=linhas, columns=colunas)
+print(inventario)
+
+# print(adicionar(dic,"a", 20))
+# print(remover(dic,"hello"))
 
