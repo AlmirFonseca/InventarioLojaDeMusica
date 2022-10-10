@@ -4,32 +4,29 @@ import pandas as pd
 
 dic = {"hello":20}
 
-def listar(dicionario):
-    ''' função de listar 
+def listar(inventario):
+    ''' Função de que lista itens do inventário
 
-    :param dicionario: Dicionário que representa o inventário
-    :type dicionario: dict
-    :param b: segundo numero
-    
-    :rtype:
+    :param inventario: Dataframe do inventário
+    :type inventario: pandas.core.frame.DataFrame
+    :rtype: pd.DataFrame
     
     '''
-    
-    inventario = pd.DataFrame(dicionario)
     return inventario
 
-def adicionar(dicionario,item, quantidade):
-    ''' função de listar 
+def adicionar(inventario,nome, quantidade):
+    ''' Função que adiciona item ao inventário 
 
-    :param dicionario: Dicionário que representa o inventário
-    :type dicionario: dict
-    :param b: segundo numero
-    
-    :rtype:
+    :param inventario: Dataframe do inventário
+    :type inventario: pandas.core.frame.DataFrame
+    :param nome: nome do produto a ser adicionado
+    :type nome: str
+    :param quantidade: quantidade do produto
+    :type quantidade: int
+    :rtype: pandas.core.frame.DataFrame
     
     '''
-    dicionario[item]=quantidade
-    return dicionario
+    return inventario
     
 def remover(dicionario,item):
     ''' função de listar 
